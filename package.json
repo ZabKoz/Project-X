@@ -1,0 +1,22 @@
+{
+  "name": "project-x",
+  "version": "1.0.0",
+  "description": "",
+  "main": "project-x.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZabKoz/Project-X.git"
+  },
+  "author": "ZabKoz#2744",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZabKoz/Project-X/issues"
+  },
+  "homepage": "https://github.com/ZabKoz/Project-X#readme",
+  "dependencies": {
+    "discord.js": "^14.0.0-dev.1657411900-f0b68d5"
+  }
+}
