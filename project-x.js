@@ -33,6 +33,7 @@ const Handlers = ['Events', 'Commands'];
 Handlers.forEach(handler => {
     require(`./Handlers/${handler}`)(client);
 });
+require('./Structures/Mongoose')();
 
 module.exports = client;
 
