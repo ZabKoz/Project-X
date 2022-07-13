@@ -27,6 +27,7 @@ client.events = new Collection();
 client.aliases = new Collection();
 client.commands = new Collection();
 
+require('./Structures/Validation/Configuration')();
 
 const Handlers = ['Events', 'Commands'];
 
