@@ -8,5 +8,6 @@ module.exports = async () => {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-        .then(console.log('Connected'))
+    
+    return mongoose;
 }
