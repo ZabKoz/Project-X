@@ -1,4 +1,5 @@
-const { Client, Message } = require('discord.js');
+const { Message } = require('discord.js');
+const client = require('../../project-x');
 const mongo = require('../../Structures/Mongoose');
 const guildSchema = require('../../Structures/Schemas/Guild-schema');
 
@@ -6,16 +7,12 @@ module.exports = {
     name: 'messageCreate',
 
     /**
-     * @param {Client} client
      * @param {Message} message 
      */
     async execute(message) {
         const { guild, member } = message;
-
         if (!guild || member.bot) return;
-
         let data;
-
         await mongo().then(async (mongoose) => {
             try {
                 data = await guildSchema.findOne({
@@ -31,9 +28,19 @@ module.exports = {
             } finally {
                 mongoose.connection.close();
             }
-        })
+        });
 
-        console.log(data)
+        if (message.content.toLowerCase().startsWith(data.prefix)) {
+            const [cmd, ...args] = message.content.slice(data.prefix.length).trim().split(' ');
+            if (cmd.length === 0) return;
+            const command = 
+                client.commands.get(cmd.toLowerCase()) ||
+                client.commands.get(client.aliases.get(cmd.toLowerCase()));
+
+            if (command) {
+                command.execute(client, message, args);
+            }
+        }
     }
 
 }
