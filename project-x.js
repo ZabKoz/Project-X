@@ -27,14 +27,14 @@ client.events = new Collection();
 client.aliases = new Collection();
 client.commands = new Collection();
 
-require('./Structures/Validation/Configuration')();
+require('./Src/Structures/Validation/Configuration')();
 
 const Handlers = ['Events', 'Commands'];
 
 Handlers.forEach(handler => {
-    require(`./Handlers/${handler}`)(client);
+    require(`./Src/Handlers/${handler}`)(client);
 });
-require('./Structures/Mongoose')();
+require('./Src/Structures/Mongoose')();
 
 module.exports = client;
 

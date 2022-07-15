@@ -11,7 +11,7 @@ const ms = require('ms');
 
 module.exports = async (client) => {
 
-    const EventsFiles = await PG(`${process.cwd()}/Events/*/*.js`);
+    const EventsFiles = await PG(`${process.cwd()}/Src/Events/*/*.js`);
 
     EventsFiles.map(async (file) => {
 

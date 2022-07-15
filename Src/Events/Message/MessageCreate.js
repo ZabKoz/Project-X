@@ -1,5 +1,5 @@
-const { Message } = require('discord.js');
-const client = require('../../project-x');
+const { Message, Client } = require('discord.js');
+// const client = require('../../project-x');
 const mongo = require('../../Structures/Mongoose');
 const guildSchema = require('../../Structures/Schemas/Guild-schema');
 
@@ -7,9 +7,10 @@ module.exports = {
     name: 'messageCreate',
 
     /**
+     * @param {Client} client
      * @param {Message} message 
      */
-    async execute(message) {
+    async execute(message, client) {
         const { guild, member } = message;
         if (!guild || member.bot) return;
         let data;

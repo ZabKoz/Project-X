@@ -11,7 +11,7 @@ const ms = require('ms');
 
 module.exports = async (client) => {
 
-    const CommandFiles = await PG(`${process.cwd()}/Commands/*/*.js`);
+    const CommandFiles = await PG(`${process.cwd()}/Src/Commands/*/*.js`);
 
     CommandFiles.map(async (file) => {
 
