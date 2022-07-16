@@ -2,7 +2,7 @@ const { GetMainDir } = require('../Functions/Directories');
 const { join } = require('path');
 const i18n = require('i18n');
 
-const language = process.env.console_Language || "english";
+const language = process.env.console_language || "english";
 
 i18n.configure({
     locales: [

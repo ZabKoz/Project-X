@@ -1,1 +1,36 @@
-{}
+{
+	"Configuration": {
+		"Information": {
+			"Mistake": "Configuration has been checked, found an error in the required configuration please correct it!",
+			"Completed": "Checked the configuration, found no deficiencies in the required configuration!"
+		},
+		"Console": {
+			"Language": "Note that the console language is not specified in the configuration file. The bot will be launched in 'English'!"
+		},
+		"Bot": {
+			"Token": "Attention, deficiencies were found in the required configuration! The bot token has not been provided!"
+		},
+		"Database": {
+			"Url": "Attention, deficiencies were found in the required configuration! The database url has not been provided!"
+		}
+	},
+	"Handlers": {
+		"Commands": {
+			"Information": {
+				"Loaded": "Command was loaded: <command>!"
+			},
+			"Missing": {
+				"Name": "Note, the command name is missing from the file: <file>!",
+				"Description": "Note, in command: <command> no description is given!"
+			},
+			"Invalid": {
+				"Permissions": "Note, in command: <command> user permissions are invalid!"
+			}
+		}
+	},
+	"Events": {
+		"Ready": {
+			"Logged": "I am logged in as: <user> and ready to go!"
+		}
+	}
+}

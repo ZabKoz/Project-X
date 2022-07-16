@@ -1,1 +1,36 @@
-{}
+{
+	"Configuration": {
+		"Information": {
+			"Mistake": "Sprawdzono konfigurację, znaleziono błąd w wymaganej konfiguracji proszę go poprawić!",
+			"Completed": "Sprawdzono konfigurację, nie znaleziono braków w wymaganej konfiguracji!"
+		},
+		"Console": {
+			"Language": "Uwaga, że język konsoli nie jest określony w pliku konfiguracyjnym. Bot zostanie uruchomiony w języku 'angielskim'!"
+		},
+		"Bot": {
+			"Token": "Uwaga, znaleziono braki w wymaganej konfiguracji! Nie został podany token bota!"
+		},
+		"Database": {
+			"Url": "Uwaga, znaleziono braki w wymaganej konfiguracji! Nie został podany link bazy danych!"
+		}
+	},
+	"Handlers": {
+		"Commands": {
+			"Information": {
+				"Loaded": "Komenda załadowana: <command>"
+			},
+			"Missing": {
+				"Name": "Uwaga, w pliku brakuje nazwy polecenia: <file>",
+				"Description": "Uwaga, w komendzie: <command> nie podano opisu!"
+			},
+			"Invalid": {
+				"Permissions": "Uwaga, w komendzie: <command> uprawnienia użytkownika są nieprawidłowe"
+			}
+		}
+	},
+	"Events": {
+		"Ready": {
+			"Logged": "Jestem zalogowany jako: <user> i gotowy do działania!"
+		}
+	}
+}

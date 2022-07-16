@@ -1,9 +1,9 @@
 const { Events } = require('../Structures/Validation/EventNames');
+const i18n = require('../Structures/I18n');
 const { Client } = require('discord.js');
 const { promisify } = require('util');
 const { glob } = require('glob');
 const PG = promisify(glob);
-const ms = require('ms');
 
 /**
  * @param { Client } client
@@ -19,10 +19,10 @@ module.exports = async (client) => {
 
         if (!Events.includes(event.name) || !event.name) {
             const L = file.split("/");
-            console.log(`${event.name || "MISSING"} `, `=> ${L[6] + '/' + L[7]}`)
+            console.log(`${event.name || i18n.__mf('Handlers.Events.Missing.Name')}`, `=> ${L[6] + '/' + L[7]}`);
             return;
         }
-        if (event.once) client.once(event.name, (...args) => event.execute(...args, client))
-        else client.on(event.name, (...args) => event.execute(...args, client))
+        if (event.once) client.once(event.name, (...args) => event.execute(...args, client));
+        else client.on(event.name, (...args) => event.execute(...args, client));
     });
 }
