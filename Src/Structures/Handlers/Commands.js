@@ -1,5 +1,5 @@
-const { Perms } = require('../Structures/Validation/Permissions');
-const i18n = require('../Structures/I18n');
+const { Perms } = require('../Validation/Permissions');
+const i18n = require('../Systems/I18n');
 const { Client } = require('discord.js');
 const { promisify } = require('util');
 const { glob } = require('glob');

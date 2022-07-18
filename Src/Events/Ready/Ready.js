@@ -1,6 +1,6 @@
 const { Client } = require('discord.js');
 var activities = require('../../../Configuration/Activities.json');
-const i18n = require('../../Structures/I18n');
+const i18n = require('../../Structures/Systems/I18n');
 const chalk = require('chalk');
 const logs = console.log;
 

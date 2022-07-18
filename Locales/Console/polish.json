@@ -12,6 +12,9 @@
 		},
 		"Database": {
 			"Url": "Uwaga, znaleziono braki w wymaganej konfiguracji! Nie został podany link bazy danych!"
+		},
+		"Test": {
+			"Server": "Uwaga, znaleziono braki w wymaganej konfiguracji! Nie został podany serwer testowy (id)!"
 		}
 	},
 	"Handlers": {

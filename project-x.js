@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { Client, Partials, Collection } = require('discord.js');
+const color = require('./Configuration/Colors.json');
 const ms = require('ms');
 
 const { Channel, GuildMember, Message, Reaction, ThreadMember, User, GuildScheduledEvent } = Partials;
@@ -23,6 +24,7 @@ const client = new Client({
     }
 });
 
+client.c = color;
 client.slashCommands = new Collection();
 client.events = new Collection();
 client.aliases = new Collection();
@@ -33,7 +35,7 @@ require('./Src/Structures/Validation/Configuration')();
 const Handlers = ['Events', 'Commands', 'SlashCommands'];
 
 Handlers.forEach(handler => {
-    require(`./Src/Handlers/${handler}`)(client);
+    require(`./Src/Structures/Handlers/${handler}`)(client);
 });
 require('./Src/Structures/Mongoose')();
 

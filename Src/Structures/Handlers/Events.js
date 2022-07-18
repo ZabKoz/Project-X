@@ -1,5 +1,5 @@
-const { Events } = require('../Structures/Validation/EventNames');
-const i18n = require('../Structures/I18n');
+const { Events } = require('../Validation/EventNames');
+const i18n = require('../Systems/I18n');
 const { Client } = require('discord.js');
 const { promisify } = require('util');
 const { glob } = require('glob');

@@ -1,6 +1,6 @@
-const { Perms } = require('../Structures/Validation/Permissions');
-const { globalCmd, createCmd } = require('../Functions/SlashHandler');
-const i18n = require('../Structures/I18n');
+const { Perms } = require('../Validation/Permissions');
+const { globalCmd, createCmd } = require('../../Functions/SlashHandler');
+const i18n = require('../Systems/I18n');
 const { Client } = require('discord.js');
 const { promisify } = require('util');
 const { glob } = require('glob');
@@ -63,10 +63,10 @@ module.exports = async (client) => {
     
     client.on('ready', () => {
         if (process.env.production_mode !== false) {
-            globalCmd(client, CommandsArray)
+            globalCmd(client, CommandsArray);
         } else {
             const guildId = process.env.test_server;
-            createCmd(client, guildId, CommandsArray)
+            createCmd(client, guildId, CommandsArray);
         }
-    })
+    });
 }

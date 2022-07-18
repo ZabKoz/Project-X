@@ -12,6 +12,9 @@
 		},
 		"Database": {
 			"Url": "Attention, deficiencies were found in the required configuration! The database url has not been provided!"
+		},
+		"Test": {
+			"Server": "Attention, deficiencies were found in the required configuration! The test server (id) was not specified!"
 		}
 	},
 	"Handlers": {
