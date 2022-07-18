@@ -30,7 +30,13 @@
 	},
 	"Events": {
 		"Ready": {
-			"Logged": "I am logged in as: <user> and ready to go!"
+			"Activities": {
+				"Servers": "Servers"
+			},
+			"Information": {
+				"Logged": "I am logged in as: <user> and ready to go!",
+				"NeedHelp": "Do you need help? Contact me! \n"
+			}
 		}
 	}
 }

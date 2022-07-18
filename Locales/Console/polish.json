@@ -30,7 +30,13 @@
 	},
 	"Events": {
 		"Ready": {
-			"Logged": "Jestem zalogowany jako: <user> i gotowy do działania!"
+			"Activities": {
+				"Servers": "Serwery"
+			},
+			"Information": {
+				"Logged": "Jestem zalogowany jako: <user> i gotowy do działania!",
+				"NeedHelp": "Potrzebujesz pomocy? Skontaktuj się ze mną! \n"
+			}
 		}
 	}
 }
