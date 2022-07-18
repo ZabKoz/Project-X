@@ -23,13 +23,14 @@ const client = new Client({
     }
 });
 
+client.slashCommands = new Collection();
 client.events = new Collection();
 client.aliases = new Collection();
 client.commands = new Collection();
 
 require('./Src/Structures/Validation/Configuration')();
 
-const Handlers = ['Events', 'Commands'];
+const Handlers = ['Events', 'Commands', 'SlashCommands'];
 
 Handlers.forEach(handler => {
     require(`./Src/Handlers/${handler}`)(client);

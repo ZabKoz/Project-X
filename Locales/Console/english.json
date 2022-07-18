@@ -26,6 +26,23 @@
 			"Invalid": {
 				"Permissions": "Note, in command: <command> user permissions are invalid!"
 			}
+		},
+		"SlashCommands": {
+			"Information": {
+				"Loaded": "(/) Command was loaded: <command>!"
+			},
+			"Missing": {
+				"Name": "Note, the (/) command name is missing from the file: <file>!",
+				"Description": "Note, in (/) command: <command> no description is given!"
+			},
+			"Invalid": {
+				"Permissions": "Note, in (/) command: <command> user permissions are invalid!"
+			}
+		},
+		"Events": {
+			"Missing": {
+				"Name": "The name of the event was not given!"
+			}
 		}
 	},
 	"Events": {

@@ -20,11 +20,28 @@
 				"Loaded": "Komenda załadowana: <command>"
 			},
 			"Missing": {
-				"Name": "Uwaga, w pliku brakuje nazwy polecenia: <file>",
+				"Name": "Uwaga, w pliku brakuje nazwy komendy: <file>",
 				"Description": "Uwaga, w komendzie: <command> nie podano opisu!"
 			},
 			"Invalid": {
 				"Permissions": "Uwaga, w komendzie: <command> uprawnienia użytkownika są nieprawidłowe"
+			}
+		},
+		"SlashCommands": {
+			"Information": {
+				"Loaded": "(/) Komenda załadowana: <command>"
+			},
+			"Missing": {
+				"Name": "Uwaga, w pliku brakuje nazwy (/) komendy: <file>",
+				"Description": "Uwaga, w (/) komendzie: <command> nie podano opisu!"
+			},
+			"Invalid": {
+				"Permissions": "Uwaga, w (/) komendzie: <command> uprawnienia użytkownika są nieprawidłowe"
+			}
+		},
+		"Events": {
+			"Missing": {
+				"Name": "Nazwa eventu nie została podana!"
 			}
 		}
 	},
