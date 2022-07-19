@@ -10,6 +10,10 @@ const GuildSchema = mongoose.Schema({
         type: String,
         default: 'x.',
     },
+    language: {
+        type: String,
+        default: 'English',
+    }
 });
 
 module.exports = mongoose.model('Guild', GuildSchema);

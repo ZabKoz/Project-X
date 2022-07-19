@@ -32,7 +32,12 @@ client.commands = new Collection();
 
 require('./Src/Structures/Validation/Configuration')();
 
-const Handlers = ['Events', 'Commands', 'SlashCommands'];
+const Handlers = [
+    'Events',
+    'Commands',
+    'SlashCommands',
+    'Languages'
+];
 
 Handlers.forEach(handler => {
     require(`./Src/Structures/Handlers/${handler}`)(client);

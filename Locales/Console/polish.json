@@ -46,6 +46,14 @@
 			"Missing": {
 				"Name": "Nazwa eventu nie została podana!"
 			}
+		},
+		"Languages": {
+			"Information": {
+				"Loaded": "Załadowano język: <lang>!"
+			},
+			"Missing": {
+				"Name": "Uwaga, w pliku brakuje nazwy języku: <file>!"
+			}
 		}
 	},
 	"Events": {

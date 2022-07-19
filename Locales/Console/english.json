@@ -46,6 +46,14 @@
 			"Missing": {
 				"Name": "The name of the event was not given!"
 			}
+		},
+		"Languages": {
+			"Information": {
+				"Loaded": "Language loaded: <lang>!"
+			},
+			"Missing": {
+				"Name": "Note, the file is missing the language name: <file>!"
+			}
 		}
 	},
 	"Events": {

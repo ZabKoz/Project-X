@@ -1,5 +1,7 @@
 const { Client, CommandInteraction, InteractionType, EmbedBuilder } = require('discord.js');
-const { execute } = require('../../SlashCommands/Test/Test');
+const guildSchema = require('../../Structures/Schemas/Guild-schema');
+const { GetMainDir } = require('../../Functions/Directories');
+const mongo = require('../../Structures/Mongoose');
 const { ApplicationCommand } = InteractionType;
 
 module.exports = {
@@ -10,7 +12,30 @@ module.exports = {
      * @param {Client} client
      */
     async execute(interaction, client) {
+
         const { user, guild, commandName, member, type } = interaction;
+
+        let data;
+
+        await mongo().then(async (mongoose) => {
+            try {
+                data = await guildSchema.findOne({
+                    guildId: guild.id,
+                });
+                if (!data) {
+                    let newData = await guildSchema.create({
+                        guildId: guild.id,
+                    });
+                    data = newData;
+                }
+            } catch (err) {
+                console.log(err);
+            } finally {
+                mongoose.connection.close();
+            }
+        });
+
+        let lang = require(`${GetMainDir()}/Locales/Guild/${data.language.toLowerCase()}`)
 
         if (!guild || user.bot) return;
         if (type !== ApplicationCommand) return;
@@ -36,7 +61,7 @@ module.exports = {
                     interaction.reply({ embeds: [NoBotPerms], ephemeral: true });
                 }
             }
-            cmd.execute(interaction, client)
+            cmd.execute(interaction, client, lang)
         }
     }
 }
