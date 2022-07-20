@@ -23,40 +23,37 @@ module.exports = {
      * @param {Client} client
      * @param {ChatInputCommandInteraction} interaction
      */
-    async execute(interaction, client) {
+    
+    async execute(interaction, client, lang) {
 
         await interaction.deferReply({ ephemeral: true });
 
-        const { options, user, guild } = interaction
+        const { options, user, guild } = interaction;
 
         const newPrefix = options.getString('prefix');
 
         if (newPrefix.length >= 5) {
-            return EditReply(interaction, `${client.c.red}`, '', '...', true)
+            return EditReply(interaction, `${client.c.red}`, '', `${lang.SET_PREFIX.TOO_LONG}`, true)
         }
 
         const Embed = new EmbedBuilder()
             .setColor(client.c.yellow)
+            .setDescription(lang.SET_PREFIX.SURE.replace(/<prefix>/g, newPrefix))
 
         const row = new ActionRowBuilder().addComponents(
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Success)
                 .setCustomId('accept')
-                .setLabel('Yes'),
+                .setLabel(lang.SET_PREFIX.ACCEPT),
 
             new ButtonBuilder()
                 .setStyle(ButtonStyle.Danger)
                 .setCustomId('not-accept')
-                .setLabel('No')
+                .setLabel(lang.SET_PREFIX.NOT_ACCEPT)
         );
 
         const Page = await interaction.editReply({
-            embeds: [
-                Embed.setDescription(`Jesteś pewny?`)
-            ],
-            components: [
-                row
-            ]
+            embeds: [Embed], components: [row]
         });
 
         const col = await Page.createMessageComponentCollector({
@@ -73,9 +70,8 @@ module.exports = {
                     await mongo().then(async (mongoose) => {
                         try {
                             await guildSchema.findOneAndUpdate({
-                                guildId: interaction.guild.id,
+                                guildId: guild.id,
                             }, {
-                                guildId: interaction.guild.id,
                                 prefix: newPrefix,
                             }, {
                                 new: true,
@@ -89,26 +85,26 @@ module.exports = {
 
                     interaction.editReply({
                         embeds: [
-                            Embed.setColor('Green')
-                                .setDescription('Usało się !')
+                            Embed.setColor(client.c.green)
+                                .setDescription(lang.SET_PREFIX.SUCCESS.replace(/<prefix>/g, newPrefix))
                         ],
                         components: []
                     });
 
 
                 }
-                break;
+                    break;
 
                 case 'not-accept': {
                     interaction.editReply({
                         embeds: [
-                            Embed.setColor('#ba3c2a')
-                                .setDescription('Anulowano!')
+                            Embed.setColor(client.c.red)
+                                .setDescription(lang.SET_PREFIX.CANCELLED)
                         ],
                         components: []
                     });
                 }
-                break;
+                    break;
             }
         });
 
